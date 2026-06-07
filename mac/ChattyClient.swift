@@ -2,7 +2,7 @@ import ChattyProtocol
 import Cocoa
 import Network
 
-class ChattyClient: @unchecked Sendable, ObservableObject {
+class ChattyClient: @unchecked Sendable {
 
 	private var conn: NWConnection?
 	private var lineBuffer = ""
