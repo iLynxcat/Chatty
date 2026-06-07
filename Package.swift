@@ -14,7 +14,8 @@ let package = Package(
 			dependencies: [
 				.target(name: "ChattyProtocol")
 			],
-			path: "mac"
+			path: "mac",
+			exclude: ["Info.plist"]
 		),
 		.target(
 			name: "ChattyProtocol",
