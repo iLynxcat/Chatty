@@ -9,7 +9,7 @@ an instant messaging protocol & reference implementations in Swift and Rust
 - `swift run` (Run desktop client app)
 - `make Chatty.app` (Build desktop client app)
 
-![A chat log window shows users "lynx" and "alsolynx" engaging and showing off features.](.meta/chat_window.png)
+![Users "lynx" and "alsolynx" engage on an instant messenger, showing off features in a minimal text-based log.](.meta/chat_window.png)
 
 ## Protocol Syntax
 
