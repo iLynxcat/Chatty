@@ -1,5 +1,6 @@
 /target/
 /.build/
 Chatty.app/
+/chatty.zip
 
 .DS_Store

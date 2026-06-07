@@ -2,6 +2,16 @@ APP := Chatty.app/Contents
 
 .PHONY: clean
 
+chatty.zip: Chatty.app target/release/chattysrv
+	zip -r chatty.zip Chatty.app
+	zip chatty.zip -j target/release/chattysrv
+
+target/debug/chattysrv:
+	cargo build
+
+target/release/chattysrv:
+	cargo build --release
+
 Chatty.app:
 	swift build -c release
 	mkdir -p $(APP)/MacOS
@@ -12,3 +22,4 @@ clean:
 	swift package clean
 	cargo clean
 	rm -rf Chatty.app/
+	rm -rf chatty.zip
