@@ -15,12 +15,12 @@ use tokio::{
     task::JoinHandle,
 };
 
+const BIND: &str = "127.0.0.1:4307";
+
 static UID_COUNTER: atomic::AtomicU32 = atomic::AtomicU32::new(1);
 
 pub static CHANNELS: LazyLock<RwLock<HashSet<String>>> =
     LazyLock::new(|| RwLock::new(HashSet::from(["general".into(), "meta".into()])));
-
-const BIND: &str = "100.122.23.64:4307";
 
 /// All messages are sent through this bus.
 /// (in:channel from:sender :body)

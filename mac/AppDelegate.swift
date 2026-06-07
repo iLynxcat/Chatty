@@ -94,7 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			}
 		}
 
-		client.connect(host: "liza.coin-spica.ts.net", port: 4307)
+		client.connect(host: "localhost", port: 4307)
 
 		chatWindow.showWindow(self)
 		chatWindow.window?.makeKeyAndOrderFront(self)
