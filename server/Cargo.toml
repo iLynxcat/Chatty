@@ -1,0 +1,12 @@
+[package]
+name = "chatty"
+version = "0.0.0"
+edition = "2024"
+
+[[bin]]
+name = "chatty"
+path = "main.rs"
+
+[dependencies]
+tokio = { version = "1.52.3", features = ["net", "io-util", "macros", "rt-multi-thread", "sync"] }
+chattyproto = { path = "../lib-rust" }
