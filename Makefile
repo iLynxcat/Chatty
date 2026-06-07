@@ -9,6 +9,6 @@ Chatty.app:
 	cp mac/Info.plist $(APP)/
 
 clean:
-	rm -rf .build/
-	rm -rf target/
+	swift package clean
+	cargo clean
 	rm -rf Chatty.app/
