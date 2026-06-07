@@ -61,7 +61,7 @@ extension ConsoleViewController: NSTextFieldDelegate {
 		if selector == #selector(insertNewline(_:)) {
 			let command = input.stringValue
 
-			appendOutput("> \(command)", color: .systemCyan)
+			appendOutput("> \(command)", color: .systemTeal)
 			input.stringValue = ""
 
 			onCommand?(command)

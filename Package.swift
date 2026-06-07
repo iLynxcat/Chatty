@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
 	name: "Chatty",
 	platforms: [
-		.macOS(.v26)
+		.macOS(.v10_15)
 	],
 	targets: [
 		.executableTarget(

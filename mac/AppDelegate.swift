@@ -99,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		chatWindow.showWindow(self)
 		chatWindow.window?.makeKeyAndOrderFront(self)
 
-		NSApp.activate()
+		NSApp.activate(ignoringOtherApps: true)
 		inspectorItem.state = inspector.menuItemState
 	}
 

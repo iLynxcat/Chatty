@@ -20,11 +20,6 @@ class ChattyClient: @unchecked Sendable {
 			case .ready: self.receive()
 			case .failed(let error):
 				print("Failed: \(error)")
-
-				if error.errorCode == 54 {
-					print("Connection reset")
-					exit(Int32(error.errorCode))
-				}
 			default: break
 			}
 		}
