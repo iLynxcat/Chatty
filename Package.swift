@@ -15,7 +15,8 @@ let package = Package(
 				.target(name: "ChattyProtocol")
 			],
 			path: "mac",
-			exclude: ["Info.plist"]
+			exclude: ["Info.plist"],
+			resources: [.process("Resources")],
 		),
 		.target(
 			name: "ChattyProtocol",

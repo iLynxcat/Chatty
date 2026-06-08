@@ -1,3 +1,4 @@
+import AppKit
 import ChattyProtocol
 import Combine
 
@@ -26,7 +27,22 @@ class ChatWindowViewModel: ObservableObject {
 	func handleMessage(_ message: ServerMessage) {
 		switch message {
 		case .connected(let name, let uid):
+			guard
+				self.user == nil
+			else { break }
+
 			print("user is now \(name)")
+			if self.user == nil,
+				let url = Bundle.module.url(
+					forResource: "hello",
+					withExtension: "mp3"),
+				let sound = NSSound(
+					contentsOf: url,
+					byReference: false)
+			{
+				sound.play()
+			}
+
 			self.user = OnlineUser(name: name, uid: uid)
 		case .name(let newName, _, let uid):
 			guard let user, user.uid == uid else { break }
@@ -34,6 +50,24 @@ class ChatWindowViewModel: ObservableObject {
 			self.user = OnlineUser(name: newName, uid: uid)
 		case .ping(let channel):
 			self.channel = channel
+		case .message(_, _, let uid, _):
+			if uid != self.user?.uid,
+				let url = Bundle.module.url(forResource: "ping", withExtension: "mp3"),
+				let sound = NSSound(contentsOf: url, byReference: false)
+
+			{
+				sound.play()
+			}
+		case .error(_), .warning(_):
+			if let url = Bundle.module.url(
+				forResource: "uhoh",
+				withExtension: "mp3"),
+				let sound = NSSound(
+					contentsOf: url,
+					byReference: false)
+			{
+				sound.play()
+			}
 		default: return
 		}
 	}

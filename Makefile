@@ -17,6 +17,8 @@ Chatty.app:
 	mkdir -p $(APP)/MacOS
 	cp .build/release/Chatty $(APP)/MacOS
 	cp mac/Info.plist $(APP)/
+	mkdir -p $(APP)/Resources
+	cp -r mac/Resources $(APP)/Resources
 
 clean:
 	swift package clean
