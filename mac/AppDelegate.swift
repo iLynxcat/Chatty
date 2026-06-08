@@ -83,7 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 				chatWindow?.log.appendLog(msg)
 				chatWindow?.model.handleMessage(msg)
-			} else {
+			} else if inspector?.window?.sheets.count == 0 {
 				let alert = NSAlert()
 				alert.messageText = "Server message failed to parse"
 				alert.informativeText = "more detailed error parsing is not yet implemented, sorry"
